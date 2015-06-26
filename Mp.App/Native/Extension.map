@@ -1,0 +1,99 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+noMoreData          0x1               Extension.o
+bufPass             0x1               Extension.o
+bufTask             0x20              Extension.o
+cancelTask          0x20              Extension.o
+buf                 0x4               Extension.o
+bufCount            0x4               Extension.o
+pin                 0x4               Lcd.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+SDRAM            0xa0f00000         0x000ffffc         xw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files (x86)/yagarto/bin/../lib/gcc/arm-none-eabi/4.6.0/../../../../arm-none-eabi/lib\libc.a
+LOAD c:/program files (x86)/yagarto/bin/../lib/gcc/arm-none-eabi/4.6.0\libgcc.a
+LOAD Extension.o
+LOAD Lcd.o
+LOAD c:/program files (x86)/yagarto/bin/../lib/gcc/arm-none-eabi/4.6.0/../../../../arm-none-eabi/lib\libm.a
+START GROUP
+LOAD c:/program files (x86)/yagarto/bin/../lib/gcc/arm-none-eabi/4.6.0\libgcc.a
+LOAD c:/program files (x86)/yagarto/bin/../lib/gcc/arm-none-eabi/4.6.0/../../../../arm-none-eabi/lib\libc.a
+END GROUP
+                0x00000000                . = ALIGN (0x4)
+
+.text           0xa0f00000      0xd88
+ *(.text)
+ .text          0xa0f00000      0xbf4 Extension.o
+                0xa0f00218                SSP1_Interrupt
+                0xa0f00400                VsTask
+                0xa0f00478                VsCancelTask
+                0xa0f00584                VsStreamData
+                0xa0f005fc                VsNoMoreData
+                0xa0f0064c                VsLoadPluginFromArray
+                0xa0f00680                VsSetVolume
+                0xa0f006e0                VsSetBassAndTreble
+                0xa0f00770                VsInit
+ .text          0xa0f00bf4      0x194 Lcd.o
+                0xa0f00bf4                LcdInit
+                0xa0f00c7c                LcdSetLevel
+
+.glue_7         0xa0f00d88        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0xa0f00d88        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0xa0f00d88        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0xa0f00d88        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+                0xa0f00d88                . = ALIGN (0x4)
+
+.rodata
+ *(.rodata)
+                0xa0f00d88                . = ALIGN (0x4)
+
+.data           0xa0f00d88        0x0
+ *(.data)
+ .data          0xa0f00d88        0x0 Extension.o
+ .data          0xa0f00d88        0x0 Lcd.o
+                0xa0f00d88                . = ALIGN (0x4)
+
+.bss            0xa0f00d88       0x50
+                0xa0f00d88                __bss_start__ = .
+ *(.bss)
+ .bss           0xa0f00d88        0x0 Extension.o
+ .bss           0xa0f00d88        0x0 Lcd.o
+                0xa0f00d88                __bss_end__ = .
+ COMMON         0xa0f00d88       0x4c Extension.o
+                0xa0f00d88                noMoreData
+                0xa0f00d89                bufPass
+                0xa0f00d8c                bufTask
+                0xa0f00dac                cancelTask
+                0xa0f00dcc                buf
+                0xa0f00dd0                bufCount
+ COMMON         0xa0f00dd4        0x4 Lcd.o
+                0xa0f00dd4                pin
+                0xa0f00dd8                end = .
+OUTPUT(Extension.elf elf32-littlearm)
+
+.comment        0x00000000       0x11
+ .comment       0x00000000       0x11 Extension.o
+                                 0x12 (size before relaxing)
+ .comment       0x00000000       0x12 Lcd.o
+
+.ARM.attributes
+                0x00000000       0x32
+ .ARM.attributes
+                0x00000000       0x32 Extension.o
+ .ARM.attributes
+                0x00000032       0x32 Lcd.o

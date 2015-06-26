@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Mp.Ui.Managers.DesktopManager">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <Members>
+      <Field Name="_currentDesktop" Hidden="true" />
+      <Field Name="_desktops" Hidden="true" />
+      <Field Name="_firstInputManagerSet" Hidden="true" />
+      <Field Name="_inputManager" Hidden="true" />
+      <Method Name="_inputManager_TouchDown" Hidden="true" />
+      <Method Name="_inputManager_TouchMove" Hidden="true" />
+      <Method Name="_inputManager_TouchUp" Hidden="true" />
+      <Field Name="_inputTimeoutMs" Hidden="true" />
+      <Field Name="_inputTimeoutTimer" Hidden="true" />
+      <Field Name="_instance" Hidden="true" />
+      <Field Name="_reservedDesktops" Hidden="true" />
+      <Method Name="AddDesktop" Hidden="true" />
+      <Method Name="calDesktop_CalibrationComplete" Hidden="true" />
+      <Field Name="DESK_DEFAULT" Hidden="true" />
+      <Field Name="DESK_EDIT" Hidden="true" />
+      <Field Name="ScreenBitsPerPixel" Hidden="true" />
+      <Field Name="ScreenHeight" Hidden="true" />
+      <Field Name="ScreenOrientationDeg" Hidden="true" />
+      <Field Name="ScreenWidth" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Delegate Name="Mp.Ui.Managers.DesktopManager.CalibrationCompleteEventHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Managers\DesktopManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Mp.Ui.Managers.DesktopManager.InputTimeoutEventHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Managers\DesktopManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>RAAEgAACIFAABAAAAAEAAAgggmBQAiAASAQEIAAkYAE=</HashCode>
+      <FileName>Managers\DesktopManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

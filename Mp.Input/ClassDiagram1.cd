@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Mp.Input.InputManager">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <Members>
+      <Field Name="_instance" Hidden="true" />
+      <Field Name="_lastX" Hidden="true" />
+      <Field Name="_lastY" Hidden="true" />
+      <Field Name="_penDown" Hidden="true" />
+      <Field Name="_touchThread" Hidden="true" />
+      <Field Name="_x" Hidden="true" />
+      <Field Name="_y" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AIAEAgAIAAQAAAAAAECAgAQAEAAAAAAAQAAAAGAAAAA=</HashCode>
+      <FileName>InputManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Delegate Name="Mp.Input.OnTouchEvent">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACAAAAAAAAAA=</HashCode>
+      <FileName>TouchEventHandler.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

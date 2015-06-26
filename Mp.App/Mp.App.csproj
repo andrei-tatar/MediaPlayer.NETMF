@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AssemblyName>Mp.App</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Mp.App</RootNamespace>
+    <ProjectTypeGuids>{b69e3092-b931-443c-abe7-7e7b65f2a37f};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{030368C1-EB79-46FF-BF71-CACD9E52F6A3}</ProjectGuid>
+    <TargetFrameworkVersion>v4.1</TargetFrameworkVersion>
+    <NetMfTargetsBaseDir Condition="'$(NetMfTargetsBaseDir)'==''">$(MSBuildExtensionsPath32)\Microsoft\.NET Micro Framework\</NetMfTargetsBaseDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>noTRACE,MF_FRAMEWORK_VERSION_V4_1</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
+  <ItemGroup>
+    <Compile Include="AppConfig.cs" />
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="Controls\FsItem.cs" />
+    <Compile Include="Controls\FsList.cs" />
+    <Compile Include="Controls\RadioStationItem.cs" />
+    <Compile Include="Controls\RadioStationsList.cs" />
+    <Compile Include="Dialogs\EditStationDialog.cs" />
+    <Compile Include="Audio\VsDriver.cs" />
+    <Compile Include="Audio\VsDriver.File.cs" />
+    <Compile Include="Audio\VsDriver.Radio.cs" />
+    <Compile Include="Dialogs\GetDateDialog.cs" />
+    <Compile Include="Dialogs\GetTimeDialog.cs" />
+    <Compile Include="Dialogs\ProxyDialog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Resources\Extension.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Extension.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\LocalFonts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalFonts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Plugins.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Plugins.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StorageManager.cs" />
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GHIElectronics.NETMF.Hardware, Version=4.1.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GHIElectronics.NETMF.Hardware.EMX, Version=4.1.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GHIElectronics.NETMF.IO, Version=4.1.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GHIElectronics.NETMF.Native, Version=4.1.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GHIElectronics.NETMF.Net, Version=4.1.8.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="GHIElectronics.NETMF.System, Version=4.1.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="GHIElectronics.NETMF.USBHost, Version=4.1.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Graphics" />
+    <Reference Include="Microsoft.SPOT.Hardware" />
+    <Reference Include="Microsoft.SPOT.IO" />
+    <Reference Include="Microsoft.SPOT.Native" />
+    <Reference Include="Microsoft.SPOT.Net" />
+    <Reference Include="System" />
+    <Reference Include="System.Http" />
+    <Reference Include="System.IO" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mp.Input\Mp.Input.csproj">
+      <Project>{CF09C78F-31F4-4128-A39A-74B68EAB612F}</Project>
+      <Name>Mp.Input</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mp.Ui\Mp.Ui.csproj">
+      <Project>{E0EB74BC-9EC9-4E36-8D6F-23A98BE327EA}</Project>
+      <Name>Mp.Ui</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mp.Weather\Mp.Weather.csproj">
+      <Project>{A0DE05EC-00C4-4FFC-B934-86B81241766E}</Project>
+      <Name>Mp.Weather</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Images.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Extension.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Extension.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Plugins.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Plugins.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\LocalFonts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalFonts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Native\Extension.elf" />
+    <None Include="Resources\Fonts\clockfont_72.tinyfnt" />
+    <None Include="Resources\Plugins\Flac_v140.vsplg" />
+    <None Include="Resources\Plugins\Flac_v180.vsplg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Native\Extension.c" />
+    <Content Include="Native\Extension.h" />
+    <Content Include="Native\Lcd.c" />
+    <Content Include="Native\LPC24xx.h" />
+    <Content Include="Native\RLP.h" />
+    <None Include="Resources\Images\btForward.gif" />
+    <None Include="Resources\Images\btBack.gif" />
+    <None Include="Resources\Images\btPause.gif" />
+    <None Include="Resources\Images\fsBack.gif" />
+    <None Include="Resources\Images\fsNone.gif" />
+    <None Include="Resources\Images\fsMusic.gif" />
+    <None Include="Resources\Images\fsFolder.gif" />
+    <None Include="Resources\Images\imgRefresh.gif" />
+    <None Include="Resources\Images\bootLogo.bmp" />
+    <None Include="Resources\Images\btStop.gif" />
+    <None Include="Resources\Images\btPlay.gif" />
+    <None Include="Resources\Images\imgEdit.gif" />
+    <None Include="Resources\Images\imgDelete.gif" />
+    <None Include="Resources\Images\imgAdd.gif" />
+    <None Include="Resources\Images\imgWeather.gif" />
+    <None Include="Resources\Images\imgSettings.gif" />
+    <None Include="Resources\Images\imgRadio.gif" />
+    <None Include="Resources\Images\imgMusic.gif" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <PreBuildEvent>cd $(ProjectDir)\Native
+make rebuild</PreBuildEvent>
+  </PropertyGroup>
+</Project>
